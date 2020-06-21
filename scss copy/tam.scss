@@ -1,0 +1,483 @@
+/* ––––––– */
+/* Imports */
+/* ––––––– */
+/* This keeps our css organised by splitting into smaller more focused files instead of one big one */
+
+@import '_resets.scss';
+@import '_typography.scss';
+
+/* –––––––—— */
+/* Variables */
+/* –––––––—— */
+/* This allows us to reuse values easily and edit all from one place if we want to change later */
+
+  /* Colours */
+  $black: #000000;
+  $grey: #4a4a4a;
+  $offwhite: #adadad;
+  $red: #FF473A;
+  $white: #FFFFFF;
+  /* Screen sizes */
+  /* Unfortunately we can't use these inside media queries yet but sass does let us do it, we'll talk about sass in the next class */
+  $mobile: 0px;
+  $tablet: 600px;
+  $laptop: 900px;
+  $desktop: 1400px;
+
+
+/* –––––––— */
+/* Exercise */
+/* –––––––— */
+body {background-color: $black;}
+/* 1. Make our grid */
+
+@media screen and (min-width:$mobile) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width:$laptop) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 10px;
+    row-gap: 0px;
+    width: 100%;
+    max-width: 1400px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media screen and (min-width:$desktop) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 10px;
+    row-gap: 0px;
+    width: 100%;
+    max-width: 2304px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+
+
+/* 2. Make our nav */
+nav{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+
+
+.logo-wrapper{
+  grid-column: 4 / span 6;
+  justify-self: center;
+}
+
+.logo{
+  max-width: 300px;
+  max-height: 100px;
+}
+
+
+
+.bag-wrapper{
+  grid-column: 12 / span 1 ;
+  justify-self: center;
+  align-self: center;
+  p:hover{
+    color:$offwhite;
+  }
+}
+
+
+
+ul{
+  grid-column: 1 / span 1;
+}
+
+section{
+  padding-top: 4rem;
+  padding-bottom: 1.2rem;
+}
+
+.FF{
+  grid-column: 5 / span 4;
+  font-size: 22px;
+  justify-self: center;
+}
+
+.cc{
+  grid-column: 6 / span 2;
+  font-size: 22px;
+  justify-self: center;
+}
+/* 3. Make our background image */
+
+main{
+  padding-top: 2rem;
+  padding-bot: 1.2rem;
+}
+
+.picture{
+  grid-column: 1 / span 4;
+  min-height: 800px;
+  justify-self: center;
+}
+
+.bottle{
+  grid-column: 1/ span 4;
+  min-width: 1000px;
+  justify-self: center;
+}
+
+.market{
+  grid-column: 10 / span 3;
+  align-self: center;
+}
+
+.text-wrapper{
+  grid-column: 10 / span 3;
+  align-self: center;
+  padding-bottom: 2.3rem;
+}
+
+
+.info{
+  margin-top: 2rem;
+  div{
+    margin: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $white;
+  }
+  div:last-of-type{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $white;
+  }
+  p{
+    display: none;
+  }
+  button:onclick{
+    display: inline-block;
+  }
+}
+
+.buttons-wrapper{
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding-bottom:1rem;
+  padding-top: 2.3rem;
+  a{
+    display: inline-block;
+    background-color: $white;
+    color: $black;
+    border: 1px solid $black;
+    padding: 1rem 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  a:last-of-type{
+    background-color: $black;
+    color: $white;
+    border: 1px solid $white;
+  }
+  a:hover{
+    background-color: $black;
+    color: $white;
+    border: 1px solid $white;
+  }
+  a:last-of-type:hover{
+    background-color: $white;
+    color: $black;
+  }
+}
+
+intro{
+  padding-top: 10rem;
+  padding-bottom: 1.2rem;
+}
+
+.eeWrap{
+  grid-column: 1 / span 12;
+  width: 100%;
+  min-height: 1000px;
+}
+
+.introwrap{
+  font-size: 1rem;
+  grid-column: 1 / span 12;
+  justify-self: center;
+}
+
+.intronextwrap{
+  font-size: 1rem;
+  grid-column: 1 / span 12;
+  justify-self: center;
+}
+
+topnote{
+  padding-top: 10rem;
+  padding-bottom: 1.2rem;
+
+}
+
+midnote{
+  padding-top: 10rem;
+  padding-bottom: 1.2rem;
+}
+
+bottomnote{
+  padding-top: 10rem;
+  padding-bottom: 1.2rem;
+}
+
+material{
+  padding-top: 10rem;
+  padding-bottom: 1.2rem;
+}
+
+.sagepic{
+  grid-column: 1 / span 6;
+  min-height: 300px;
+  min-width: 500px;
+}
+
+.sageWrap{
+  grid-column: 10 / span 3;
+  align-self: center;
+}
+
+.leatherpic{
+  grid-column: 7 / span 6;
+  min-height: 300px;
+  min-width: 500px;
+}
+
+.leatherWrap{
+  grid-column: 1 / span 3;
+  justify-self: end;
+  align-self: center;
+}
+
+.tonkabeanpic{
+  grid-column: 1 / span 6;
+  min-height: 300px;
+  min-width: 500px;
+}
+
+.notes{
+  h3{
+    font-size: 1rem;
+    color: $grey;
+  }
+}
+
+.tonkaWrap{
+  grid-column: 10 / span 3;
+  align-self: center;
+}
+
+.woodwrapper{
+  grid-column: 1 / span 12;
+  width: 80%;
+  justify-self: center;
+}
+.wood{
+  font-size: 1rem;
+  grid-column: 4 / span 6;
+  justify-self: center;
+}
+
+
+.shop{
+  padding-top: 20rem;
+  padding-bottom: 5rem;
+}
+
+.collection{
+  font-size: 1.2rem;
+  grid-column: 1 / span 12;
+  justify-self: center;
+  padding-bottom: 1rem
+}
+
+.collectionimage{
+  grid-column: 1 / span 12;
+  width: 75%;
+  justify-self: center;
+  padding-bottom: 2rem;
+}
+
+.shopwrapper{
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  grid-column: 1 / span 12;
+  justify-self: center;
+  padding-bottom: 3rem;
+  a{
+    display: inline-block;
+    background-color: $black;
+    color: $white;
+    border: 1px solid $white;
+    padding: 1rem 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  a:hover{
+    background-color: $white;
+    color: $black;
+  }
+}
+
+button{
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover{
+  color: $offwhite;
+}
+
+button:focus{
+  outline: none;
+}
+
+/* 4. Make our exhibit info */
+#about-close-button{
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+#about-drawer{
+  position: fixed;
+	z-index:2;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+  width: 100%;
+  max-width: 500px;
+	background-color: $black;
+  padding: 4rem;
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+	transform: translateX(-100%); /* Closed */
+  transition: transform 0.3s cubic-bezier(1,0.02,0,0.97);
+}
+
+#about-drawer.open{
+	transform: translateX(0%); /* Open */
+}
+
+#about-drawer h2{
+  color: $white;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+#about-drawer p, #about-drawer button{
+  color: $white;
+}
+
+#about-drawer button:hover{
+  color: $offwhite;
+}
+
+#about-drawer img{
+  max-width: 250px;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+#about-drawer h2:hover{
+  color: $offwhite;
+
+}
+
+//////////////////////
+
+/*
+#desc-close-button{
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-top: 3rem;
+}
+
+#desc-drawer{
+  position: fixed;
+	z-index:2;
+	right: 0;
+	top: 40vh;
+	bottom: 0;
+	height: 50vh;
+  width: 100%;
+  max-width: 500px;
+	background-color: $black;
+  padding: 4rem;
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+	transform: translateX(105%);
+  transition: transform 0.3s cubic-bezier(1,0.02,0,0.97);
+}
+
+#desc-drawer.open{
+	transform: translateX(0%);
+}
+
+#desc-drawer h2{
+  color: $white;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+#desc-drawer p, #desc-drawer button{
+  color: $white;
+}
+
+#desc-drawer button:hover{
+  color: $offwhite;
+}
+*/
+
+/* Sample of a Media Query */
+/* This will cause p to turn red on screens bigger than 900px */
+@media screen and (min-width:$mobile) {
+  p{
+    color: $white;
+  }
+}
+
+@media screen and (min-width:$laptop) {
+  p{
+    color: $white;
+  }
+}
+@media screen and (min-width:$desktop) {
+  p{
+    color: $white;
+  }
+}
