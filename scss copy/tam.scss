@@ -164,12 +164,19 @@ main{
     padding-bottom: 1rem;
     border-bottom: 1px solid $white;
   }
-  p{
-    display: none;
-  }
-  button:onclick{
-    display: inline-block;
-  }
+}
+
+.descdrawer{
+  display: none;
+  
+}
+
+.knDrawer{
+  display: none;
+}
+
+.chemDrawer{
+  display: none;
 }
 
 .buttons-wrapper{
@@ -364,6 +371,7 @@ button:focus{
 }
 
 /* 4. Make our exhibit info */
+
 #about-close-button{
   width: 100%;
   text-align: left;
